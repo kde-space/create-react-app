@@ -3,22 +3,28 @@ const initialState = {
   tasks: []
 };
 
-export default function tasksReducer(state = initialState, action) {
-  switch (action.type) {
+export default function taskReducers(state = initialState, action) {
+  switch(action.type) {
     case 'INPUT_TASK':
       return {
         ...state,
         task: action.payload.task
+      };
+    case 'ADD_TASK':
+      return {
+        ...state,
+        tasks: state.tasks.concat([action.payload.task])
       };
     case 'CLEAR_INPUT_TASK':
       return {
         ...state,
         task: ''
       };
-    case 'ADD_TASK':
+    case 'ALL_CLEAR':
       return {
         ...state,
-        tasks: state.tasks.concat([action.payload.task])
+        task: '',
+        tasks: []
       };
     default:
       return state;
