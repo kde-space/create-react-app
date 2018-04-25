@@ -4,8 +4,8 @@ import { inputTask, addTask, clearInput, clearAll } from '../actions/tasks';
 
 function mapStateToProps({ task, tasks }) {
   return {
-    task,
-    tasks
+    task: tasks.task,
+    tasks: tasks.tasks
   };
 }
 
