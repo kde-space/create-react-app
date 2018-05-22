@@ -81,7 +81,7 @@ class Friends extends Component {
     return (
       <div>
         <h2>Friends</h2>
-        <Route exact path='/friends' render={props => <FriendList handleVote={this.handleVote} />} />
+        <Route exact path='/friends' render={props => <FriendList handleVote={this.handleVote} vote={this.state} />} />
         <Route path='/friends/:id' render={props => <Friend match={props.match} vote={this.state} />} />
       </div>
     )
@@ -92,7 +92,9 @@ const FriendList = (props) => (
   <ul>
     {friendsList.map(friend => (
       <li key={friend.id}>
-        <Link to={`/friends/${friend.id}`}>{friend.nameJa}</Link><button onClick={() => props.handleVote(friend.id)}>+</button>
+        <Link to={`/friends/${friend.id}`}>{friend.nameJa}</Link>
+        <button onClick={() => props.handleVote(friend.id)}>+</button>
+        <span>{props.vote[friend.id]}</span>
       </li>
     ))}
   </ul>
