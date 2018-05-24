@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
+  const { cartData } = props;
+  console.log(cartData);
   const liStyle = {
     display: 'table-cell',
     border: '1px solid #eee'
@@ -14,8 +16,15 @@ const Header = () => {
 
   const activeStyle = {
     fontWeight: 'bold',
-    backgroundColor: '#f9f9f9'
+    backgroundColor: '#eee'
   };
+
+  let itemCountDom = 0;
+  if (cartData.length > 0) {
+    cartData.forEach(item => {
+      itemCountDom += item.count;
+    });
+  }
 
   return (
     <header >
@@ -34,7 +43,7 @@ const Header = () => {
           <NavLink style={aStyle} activeStyle={activeStyle} to='/about'>About</NavLink>
         </li>
         <li style={liStyle}>
-          <NavLink style={aStyle} activeStyle={activeStyle} to='/cart'>Cart</NavLink>
+          <NavLink style={aStyle} activeStyle={activeStyle} to='/cart'>Cart{itemCountDom === 0 ? '' : `(${itemCountDom})`}</NavLink>
         </li>
         <li style={liStyle}>
           <NavLink style={aStyle} activeStyle={activeStyle} to='/shop'>Shop</NavLink>
