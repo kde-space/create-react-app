@@ -47,7 +47,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
-            <Route path='/cart' component={Cart} />
+            <Route path='/cart' render={(props) => <Cart cartData={this.state.cart} />} />
             <Route path='/shop' component={Shop} />
             <Route path='/404' component={No404}></Route>
             <Redirect to='/404' />
