@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import CartItem from './CartItem';
+// module
+import getItemValueById from '../util/getItemValueById';
 
 /**
  * カートページ
  */
-const Cart = ({ cartData }) => {
+const Cart = ({
+  masterData,
+  cartData,
+  changeCartItem
+}) => {
   const styleCartItem = {
     listStyle: 'none',
     border: '1px solid #ccc',
@@ -31,7 +37,11 @@ const Cart = ({ cartData }) => {
         <ul>
           {cartData.map(item =>
             <li key={item.id} style={styleCartItem}>
-              <CartItem item={item} />
+              <CartItem
+                masterCount={getItemValueById(masterData, item.id).count}
+                item={item}
+                changeCartItem={changeCartItem}
+              />
             </li>
           )}
         </ul>

@@ -32,6 +32,9 @@
 ```
 
 ## state
+- `itemMaster` はすべての元となるデータで基本的に不変
+- 在庫数は `itemMaster` の 各 `count` から割り当てられる
+
 ```javascript
 {
   itemMaster: [
@@ -60,16 +63,19 @@
   cart: [
     {
       id: 1,
+      ...
       count: 5
     }
   ],
   shop: [
     {
       id: 1,
+      ...
       count: 3
     },
     {
       id: 2,
+      ...
       count: 5
     }
   ]

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
   const { cartData } = props;
-  console.log(cartData);
   const liStyle = {
     display: 'table-cell',
     border: '1px solid #eee'
