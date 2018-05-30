@@ -15,6 +15,7 @@ import About from './About';
 import Cart from './Cart';
 import Shop from './Shop';
 import No404 from './No404';
+
 // module
 import getItemValueById from '../util/getItemValueById';
 import getItemIndexById from '../util/getItemIndexById';
@@ -27,14 +28,14 @@ class App extends Component {
         {
           id: 1,
           name: '元気になる薬',
-          sescription: '飲んだら24時間元気が続く薬です',
+          description: '飲んだら24時間元気が続く薬です',
           price: 1000,
           count: 10
         },
         {
           id: 2,
           name: '落ち着く薬',
-          sescription: '飲んだら24時間沈着冷静になれる薬です',
+          description: '飲んだら24時間沈着冷静になれる薬です',
           price: 800,
           count: 10
         }
@@ -43,14 +44,14 @@ class App extends Component {
       {
         id: 1,
         name: '元気になる薬',
-        sescription: '飲んだら24時間元気が続く薬です',
+        description: '飲んだら24時間元気が続く薬です',
         price: 1000,
         count: 1
       },
       {
         id: 2,
         name: '落ち着く薬',
-        sescription: '飲んだら24時間沈着冷静になれる薬です',
+        description: '飲んだら24時間沈着冷静になれる薬です',
         price: 800,
         count: 2
       }],
@@ -101,7 +102,15 @@ class App extends Component {
                 />
               }
             />
-            <Route path='/shop' component={Shop} />
+            <Route
+              path='/shop'
+              render={(props) =>
+                <Shop
+                  masterData={this.state.itemMaster}
+                  cartData={this.state.cart}
+                />
+              }
+            />
             <Route path='/404' component={No404}></Route>
             <Redirect to='/404' />
           </Switch>
@@ -110,5 +119,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;

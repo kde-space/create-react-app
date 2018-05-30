@@ -1,11 +1,13 @@
+// packages
 import React, { Component } from 'react';
+// components
+import Container from './Container';
 
 const Home = () => {
   return (
-    <div>
-      <h2>Home</h2>
+    <Container title="Home">
       <p>ようこそ、Router Shopへ！</p>
-    </div>
+    </Container>
   );
 };
 

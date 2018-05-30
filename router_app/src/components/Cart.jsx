@@ -1,6 +1,9 @@
+// packages
 import React, { Component } from 'react';
+// components
+import Container from './Container';
 import CartItem from './CartItem';
-// module
+// modules
 import getItemValueById from '../util/getItemValueById';
 
 /**
@@ -49,10 +52,9 @@ const Cart = ({
   }
 
   return (
-    <div>
-      <h2>Cart</h2>
+    <Container title="Cart">
       <div>{cartDom}</div>
-    </div>
+    </Container>
   );
 };
 
