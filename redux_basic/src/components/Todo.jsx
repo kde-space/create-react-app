@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 const Todo = ({ text, completed, onClick }) => (
   <li
