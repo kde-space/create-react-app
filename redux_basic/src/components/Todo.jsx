@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'React';
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({ text, completed, onClick }) => (
   <li
     onClick={onClick}
     style={{ textDecoration: completed ? 'line-through' : 'none' }}
