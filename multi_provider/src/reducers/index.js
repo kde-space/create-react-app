@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import sideMenu from './sideMenu';
+import header from './header';
 import snackbar from './snackbar';
 
 export default combineReducers({
-  sideMenu,
+  header,
   snackbar
 });

@@ -1,4 +1,4 @@
-import * as sideMenuActions from '../actions/sideMenu';
+import * as headerActions from '../actions/header';
 
 const initialState = {
   isOpen: false
@@ -6,14 +6,14 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case sideMenuActions.OPEN:
+    case headerActions.OPEN:
       return {
         ...state,
         ...{
           isOpen: true
         }
       };
-    case sideMenuActions.CLOSE:
+    case headerActions.CLOSE:
       return {
         ...state,
         ...{

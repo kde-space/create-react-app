@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import appReducer from './reducers';
 import Contents from './containers/Contents';
-import SideMenu from './components/SideMenu';
+import Header from './components/Header';
 import Snackbar from './components/Snackbar';
 
 const store = createStore(
@@ -15,7 +15,7 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    <SideMenu />
+    <Header />
   </Provider>,
   document.getElementById('sideMenu')
 );

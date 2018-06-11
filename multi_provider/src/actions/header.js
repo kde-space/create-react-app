@@ -1,5 +1,5 @@
-export const OPEN = 'sideMenu/open';
-export const CLOSE = 'sideMenu/close';
+export const OPEN = 'header/open';
+export const CLOSE = 'header/close';
 
 export const open = (content) => ({
   type: OPEN
