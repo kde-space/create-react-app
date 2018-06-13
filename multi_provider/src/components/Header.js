@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as headerActions from '../actions/header';
+// import * as headerActions from '../actions/header';
 
 const Header = (props) => {
   if (props.isOpen) {

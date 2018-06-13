@@ -1,4 +1,4 @@
-import * as snackbarActions from '../actions/snackbar';
+import * as messageActions from '../actions/message';
 
 const initialState = {
   isShow: false,
@@ -7,7 +7,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case snackbarActions.SHOW:
+    case messageActions.SHOW:
       return {
         ...state,
         ...{
@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
           content: action.content
         }
       };
-    case snackbarActions.HIDE:
+    case messageActions.HIDE:
       return {
         ...state,
         ...{

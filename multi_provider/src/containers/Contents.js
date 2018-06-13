@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeaderToggleBtn from '../components/HeaderToggleBtn';
-import SnackbarBtn from '../components/SnackbarBtn';
+import MessageBtn from '../components/MessageBtn';
 
 class Contents extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Contents extends Component {
         <div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, reiciendis cum? Labore molestiae officiis itaque iure nemo neque praesentium. Adipisci ullam sint minima maiores itaque, libero harum distinctio quia optio.</p>
         </div>
-        <SnackbarBtn />
+        <MessageBtn />
       </div>
     );
   }

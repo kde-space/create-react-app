@@ -6,7 +6,7 @@ import logger from 'redux-logger';
 import appReducer from './reducers';
 import Contents from './containers/Contents';
 import Header from './components/Header';
-import Snackbar from './components/Snackbar';
+import Message from './components/Message';
 
 const store = createStore(
   appReducer,
@@ -17,20 +17,20 @@ render(
   <Provider store={store}>
     <Header />
   </Provider>,
-  document.getElementById('sideMenu')
+  document.getElementById('header')
 );
 
 render(
   <Provider store={store}>
     <Contents />
   </Provider>,
-  document.getElementById('contents')
+  document.getElementById('contents2')
 );
 
 
 render(
   <Provider store={store}>
-    <Snackbar />
+    <Message />
   </Provider>,
-  document.getElementById('snackbar')
+  document.getElementById('message')
 );

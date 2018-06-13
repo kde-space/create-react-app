@@ -1,5 +1,5 @@
-export const SHOW = 'snackbar/show';
-export const HIDE = 'snackbar/hide';
+export const SHOW = 'message/show';
+export const HIDE = 'message/hide';
 
 export const show = (content) => ({
   content,
