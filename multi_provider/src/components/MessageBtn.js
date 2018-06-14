@@ -10,6 +10,9 @@ class MessageBtn extends Component {
     this.today = `${today.getMonth() + 1}月${today.getDate()}日`;
   }
 
+  /**
+   * クリックの処理
+   */
   handleClick() {
     this.props.showMessage(<div>今日は {this.today}です</div>);
   }
@@ -23,6 +26,7 @@ class MessageBtn extends Component {
   }
 }
 
+// 文言を表示するactionをdispatchするメソッドをpropsから得られるようにする
 const mapDispatchToProps = dispatch => ({
   showMessage: (content) => dispatch(messageActions.show(content))
 });

@@ -8,6 +8,9 @@ class HeaderToggleBtn extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  /**
+   * クリック時の処理
+   */
   handleClick() {
     if (this.props.isOpen) {
       this.props.closeHeader();
@@ -25,7 +28,9 @@ class HeaderToggleBtn extends Component {
   }
 }
 
+// storeのstateからheaderの情報だけpropsから得られるようにする
 const mapStateToProps = state => state.header;
+// 表示／非表示にするアクションをdispatchするメソッドをpropsから得られるようにする
 const mapDispatchToProps = dispatch => ({
   openHeader: () => dispatch(headerActions.open()),
   closeHeader: () => dispatch(headerActions.close())

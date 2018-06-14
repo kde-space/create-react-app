@@ -16,14 +16,21 @@ class Message extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  /**
+   * コンポーネントが更新された際の処理
+   */
   componentDidUpdate() {
     if (!this.props.isShow) return;
+    // キューが溜まるのを防ぐ
     if (this.timerID !== null) {
       window.clearTimeout(this.timerID);
     }
     this.timerID = window.setTimeout(() => { this.props.hideMessage(); }, 3000);
   }
 
+  /**
+   * closeボタンがクリックされた際に非表示にする
+   */
   handleClick() {
     this.props.hideMessage();
   }
@@ -38,9 +45,9 @@ class Message extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return state.message;
-}
+// storeのstateからmessageの情報だけpropsから得られるようにする
+const mapStateToProps = state => state.message;
+// 非表示にするアクションをdispatchするメソッドをpropsから得られるようにする
 const mapDispatchToProps = dispatch => ({
   hideMessage: () => dispatch(messageActions.hide())
 });
