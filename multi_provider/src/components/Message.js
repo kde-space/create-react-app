@@ -21,7 +21,7 @@ class Message extends Component {
     if (this.timerID !== null) {
       window.clearTimeout(this.timerID);
     }
-    this.timerID = window.setTimeout(() => { this.props.hideMessage(); }, 1000);
+    this.timerID = window.setTimeout(() => { this.props.hideMessage(); }, 3000);
   }
 
   handleClick() {

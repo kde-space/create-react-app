@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import * as headerActions from '../actions/header';
-// import * as headerActions from '../actions/header';
+import HeaderToggleBtn from './HeaderToggleBtn';
+
+const styles = {
+  border: '1px solid #999',
+  padding: 10,
+  marginBottom: 10
+};
 
 const Header = (props) => {
   if (props.isOpen) {
     return (
-      <div>
-        Header <button onClick={props.closeHeader}>Close</button>
+      <div style={{...styles}}>
+        Header <HeaderToggleBtn label={'Close'}/>
       </div>
     );
   }
   return null;
 }
 
+// storeのstateからheaderの情報だけpropsから得られるようにする
 const mapStateToProps = state => state.header;
-const mapDispatchToProps = dispatch => ({
-  closeHeader: () => dispatch(headerActions.close())
-});
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);

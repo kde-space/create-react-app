@@ -19,7 +19,7 @@ class HeaderToggleBtn extends Component {
   render() {
     return (
       <div>
-        ヘッダー: <button onClick={this.handleClick}>{this.props.isOpen ? 'Close' : 'Open'}</button>
+        <button onClick={this.handleClick}>{this.props.label}</button>
       </div>
     );
   }

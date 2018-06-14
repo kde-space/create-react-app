@@ -7,19 +7,9 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case headerActions.OPEN:
-      return {
-        ...state,
-        ...{
-          isOpen: true
-        }
-      };
+      return { isOpen: true }
     case headerActions.CLOSE:
-      return {
-        ...state,
-        ...{
-          isOpen: false
-        }
-      }
+      return { isOpen: false }
     default:
       return state;
   }

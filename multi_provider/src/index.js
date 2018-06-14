@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import appReducer from './reducers';
-import Contents from './containers/Contents';
+import Contents from './components/Contents';
 import Header from './components/Header';
 import Message from './components/Message';
 
